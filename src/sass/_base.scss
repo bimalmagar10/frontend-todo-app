@@ -1,0 +1,36 @@
+*,
+*::after,
+*::before {
+  box-sizing:inherit;
+  margin: 0;
+  padding: 0;
+}
+html {
+	font-size: 62.5%;
+	@include responsive(phone){
+		font-size: 50%;
+	}
+	@include responsive(small-phone){
+		font-size: 45%;
+	}
+}
+body {
+	box-sizing:border-box;
+	font-size: $default-font-size;
+	font-family:$default-font-family;
+	line-height: 1.2;
+	transition: all .4s ease;
+}
+.attribution {
+	color:var(--color-primary);
+	text-align: center;
+	font-size: 2rem;
+	& a {
+		color: var(--color-primary);
+		text-decoration: none;
+	}
+
+}
+.current {
+	color: var(--color-primary) !important;
+}

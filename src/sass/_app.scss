@@ -1,0 +1,175 @@
+.todo-app {
+	position: relative;
+	&__top {
+       height: 35vh;
+       background-image:url("../../images/bg-desktop-light.jpg");
+       background-repeat: no-repeat;
+       background-position:cover;
+	}
+	&__bottom {
+      height: 65vh;
+      background-color:var(--color-white-smoke);
+	}
+	&__main {
+      width: 50rem;
+      position: absolute;
+      top: 7%;
+      left:50%;
+      // background-color: orangered;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      @include responsive(small-phone){
+        width: 42rem;
+        margin:0 auto;
+        transform: translateX(-50%);
+      }
+      
+	}
+	&__header{
+      margin-bottom:2rem;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      &--primary {
+        text-transform: uppercase;
+        color:#fff;
+        letter-spacing:5px;
+        font-weight: 700;
+      }
+      &--logo {
+      	height: 3rem;
+      	width: 3rem;
+      	display: inline-block;
+      }
+	}
+	&__add {
+      width: 100%;
+      display: flex;
+      padding: .5rem;
+      background-color: var(--color-white);
+      align-items: center;
+      padding: 1rem 2rem;
+      border-radius:5px;
+	}
+	&__input {
+        background-color: var(--color-white);
+      	padding: 1rem 3rem;
+      	border:none;
+      	display: inline-block;
+      	&:focus {
+     		  outline: none;
+     		  border:none;
+        }
+        margin-left: -1rem;
+        flex: 1;
+        font-size: 1.6rem;
+        color: var(--color-grey-blue-dark-2);
+        &::placeholder {
+          color: var(--color-grey-blue-dark-2);
+        }
+    }
+    &__checkbox-label {
+      height: 2rem;
+      width: 2rem;
+      border: 2px solid var(--color-white-dark);
+      //border: 2px solid $color-grey-blue-dark-2;
+      border-radius: 50%;
+      display: inline-block;
+      z-index: 100;
+    }
+    &__checkbox {
+      display: none;
+    }
+    &__checkbox:checked ~ &__checkbox-label{
+       background-image:url("../../images/icon-check.svg"),linear-gradient(to right,hsl(192, 100%, 67%),hsl(280, 87%, 65%));
+       background-repeat: no-repeat;
+       background-position: center;
+
+    }
+    &__checkbox:checked ~ span{
+       text-decoration: line-through;
+    }
+
+	&__lists {
+      margin-top: 3rem;
+      list-style: none;
+      font-size: 2rem;
+      &--item {
+        display: block;
+        padding: 2rem 2.5rem;
+        background: var(--color-white);
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid var(--color-grey-blue-1);
+        //border-bottom: 1px solid $color-grey-blue-dark-2;
+        &:first-child {
+          border-radius: 5px 5px 0 0;
+        }
+        & > .todo-app__checkbox:checked ~ button {
+          opacity: 1;
+        }
+      }
+      &--delete {
+        margin-left:auto;
+        outline: none;
+        border:none;
+        background-color: transparent;
+        cursor: pointer; 
+        opacity: 0;
+        transition: opacity .4s ease;
+      }
+      &--name {
+        margin-left: 2rem;
+        color: var(--color-grey-blue-dark-2);
+        //color: rgba(var(--color-grey-blue),.8);
+      }
+      &--msg {
+         display: flex;
+         justify-content: center;
+         text-align: center;
+         color: var(--color-grey-blue-dark-2);
+         padding: 2rem 2.5rem;
+         background: var(--color-white);
+         align-items: center;
+         border-bottom: 1px solid var(--color-grey-blue-1);
+      }
+	}
+	&__status {
+      display: flex;
+      font-size: 1.3rem;
+      background-color: var(--color-white);
+      padding: 1.5rem 2.5rem;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--color-grey-blue);
+	}
+  &__state {
+    & > * {
+      cursor: pointer;
+      font-weight:700;
+      color: var(--color-grey-blue-dark);
+    }
+    & > *:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+  &__clear-completed {
+    cursor: pointer;
+    color: var(--color-grey-blue-dark);
+  }
+  &__items-left {
+    color: var(--color-grey-blue-dark);
+  }
+}
+
+body.dark-theme {
+  background-color:var(--color-white-smoke);
+  & .todo-app{
+  &__top {
+       background-image:url("../../images/bg-desktop-dark.jpg");
+       background-repeat:no-repeat;
+       background-position: cover;
+  }
+}
+}

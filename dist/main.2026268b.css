@@ -1,0 +1,263 @@
+/*### Light Theme
+
+- Very Light Gray: hsl(0, 0%, 98%)
+- Very Light Grayish Blue: hsl(236, 33%, 92%)
+- Light Grayish Blue: hsl(233, 11%, 84%)
+- Dark Grayish Blue: hsl(236, 9%, 61%)
+- Very Dark Grayish Blue: hsl(235, 19%, 35%)
+- Bright Blue: hsl(220, 98%, 61%)
+- Check Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+body {
+  --color-primary:hsl(220, 98%, 61%);
+  --color-bg:linear-gradient(to right,hsl(192, 100%, 67%),hsl(280, 87%, 65%));
+  --color-white:#fff;
+  --color-white-smoke:whitesmoke;
+  --color-white-dark:#e4e4e4;
+  --color-grey-blue-1:hsl(236, 33%, 92%);
+  --color-grey-light:hsl(0, 0%, 98%);
+  --color-grey-blue:hsl(233, 11%, 84%);
+  --color-grey-blue-dark:hsl(236, 9%, 61%);
+  --color-grey-blue-dark-2: hsl(235, 19%, 35%);
+}
+
+body.dark-theme {
+  --color-primary:hsl(220, 98%, 61%);
+  --color-bg:linear-gradient(to right,hsl(192, 100%, 67%),hsl(280, 87%, 65%));
+  --color-white:hsl(235, 24%, 19%);
+  --color-white-smoke:hsl(235, 21%, 11%);
+  --color-white-dark:#e4e4e4;
+  --color-grey-blue-1:hsl(233, 14%, 35%);
+  --color-grey-light:hsl(0, 0%, 98%);
+  --color-grey-blue:hsl(233, 11%, 84%);
+  --color-grey-blue-dark:hsl(236, 9%, 61%);
+  --color-grey-blue-dark-2:hsl(233, 11%, 84%);
+}
+
+/*
+$color-white:hsl(235, 24%, 19%);
+$color-white-smoke:hsl(235, 21%, 11%);
+
+
+
+$color-grey-blue:hsl(234, 39%, 85%);
+$color-grey-blue-dark:hsl(234, 11%, 52%);
+$color-grey-blue-dark-2:hsl(233, 14%, 35%);
+*/
+/*
+$color-grey-blue-1:
+$color-grey-light:
+*/
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 36.875em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 28.125em) {
+  html {
+    font-size: 45%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.8rem;
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 1.2;
+  transition: all 0.4s ease;
+}
+
+.attribution {
+  color: var(--color-primary);
+  text-align: center;
+  font-size: 2rem;
+}
+.attribution a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.current {
+  color: var(--color-primary) !important;
+}
+
+.todo-app {
+  position: relative;
+}
+.todo-app__top {
+  height: 35vh;
+  background-image: url("/bg-desktop-light.6b6aa610.jpg");
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+.todo-app__bottom {
+  height: 65vh;
+  background-color: var(--color-white-smoke);
+}
+.todo-app__main {
+  width: 50rem;
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (max-width: 28.125em) {
+  .todo-app__main {
+    width: 42rem;
+    margin: 0 auto;
+    transform: translateX(-50%);
+  }
+}
+.todo-app__header {
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.todo-app__header--primary {
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 5px;
+  font-weight: 700;
+}
+.todo-app__header--logo {
+  height: 3rem;
+  width: 3rem;
+  display: inline-block;
+}
+.todo-app__add {
+  width: 100%;
+  display: flex;
+  padding: 0.5rem;
+  background-color: var(--color-white);
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+.todo-app__input {
+  background-color: var(--color-white);
+  padding: 1rem 3rem;
+  border: none;
+  display: inline-block;
+  margin-left: -1rem;
+  flex: 1;
+  font-size: 1.6rem;
+  color: var(--color-grey-blue-dark-2);
+}
+.todo-app__input:focus {
+  outline: none;
+  border: none;
+}
+.todo-app__input::placeholder {
+  color: var(--color-grey-blue-dark-2);
+}
+.todo-app__checkbox-label {
+  height: 2rem;
+  width: 2rem;
+  border: 2px solid var(--color-white-dark);
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+}
+.todo-app__checkbox {
+  display: none;
+}
+.todo-app__checkbox:checked ~ .todo-app__checkbox-label {
+  background-image: url("/icon-check.72789738.svg"), linear-gradient(to right, #57ddff, #c058f3);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.todo-app__checkbox:checked ~ span {
+  text-decoration: line-through;
+}
+.todo-app__lists {
+  margin-top: 3rem;
+  list-style: none;
+  font-size: 2rem;
+}
+.todo-app__lists--item {
+  display: block;
+  padding: 2rem 2.5rem;
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-grey-blue-1);
+}
+.todo-app__lists--item:first-child {
+  border-radius: 5px 5px 0 0;
+}
+.todo-app__lists--item > .todo-app__checkbox:checked ~ button {
+  opacity: 1;
+}
+.todo-app__lists--delete {
+  margin-left: auto;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.todo-app__lists--name {
+  margin-left: 2rem;
+  color: var(--color-grey-blue-dark-2);
+}
+.todo-app__lists--msg {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-grey-blue-dark-2);
+  padding: 2rem 2.5rem;
+  background: var(--color-white);
+  align-items: center;
+  border-bottom: 1px solid var(--color-grey-blue-1);
+}
+.todo-app__status {
+  display: flex;
+  font-size: 1.3rem;
+  background-color: var(--color-white);
+  padding: 1.5rem 2.5rem;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-grey-blue);
+}
+.todo-app__state > * {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--color-grey-blue-dark);
+}
+.todo-app__state > *:not(:last-child) {
+  margin-right: 1rem;
+}
+.todo-app__clear-completed {
+  cursor: pointer;
+  color: var(--color-grey-blue-dark);
+}
+.todo-app__items-left {
+  color: var(--color-grey-blue-dark);
+}
+
+body.dark-theme {
+  background-color: var(--color-white-smoke);
+}
+body.dark-theme .todo-app__top {
+  background-image: url("/bg-desktop-dark.0d96dc95.jpg");
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+
+/*# sourceMappingURL=/main.2026268b.css.map */

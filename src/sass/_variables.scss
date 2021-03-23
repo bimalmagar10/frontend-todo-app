@@ -1,0 +1,76 @@
+/*### Light Theme
+
+- Very Light Gray: hsl(0, 0%, 98%)
+- Very Light Grayish Blue: hsl(236, 33%, 92%)
+- Light Grayish Blue: hsl(233, 11%, 84%)
+- Dark Grayish Blue: hsl(236, 9%, 61%)
+- Very Dark Grayish Blue: hsl(235, 19%, 35%)
+- Bright Blue: hsl(220, 98%, 61%)
+- Check Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)
+*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+  body {
+  	--color-primary:hsl(220, 98%, 61%);
+  	--color-bg:linear-gradient(to right,hsl(192, 100%, 67%),hsl(280, 87%, 65%));
+  	--color-white:#fff;
+  	--color-white-smoke:whitesmoke;
+  	--color-white-dark:#e4e4e4;
+  	--color-grey-blue-1:hsl(236, 33%, 92%);
+  	--color-grey-light:hsl(0, 0%, 98%);
+  	--color-grey-blue:hsl(233, 11%, 84%);
+  	--color-grey-blue-dark:hsl(236, 9%, 61%);
+  	--color-grey-blue-dark-2: hsl(235, 19%, 35%);
+  }
+  body.dark-theme {
+  	--color-primary:hsl(220, 98%, 61%);
+  	--color-bg:linear-gradient(to right,hsl(192, 100%, 67%),hsl(280, 87%, 65%));
+  	--color-white:hsl(235, 24%, 19%);
+  	--color-white-smoke:hsl(235, 21%, 11%);
+  	--color-white-dark:#e4e4e4;
+  	--color-grey-blue-1:hsl(233, 14%, 35%);
+  	--color-grey-light:hsl(0, 0%, 98%);
+  	--color-grey-blue:hsl(233, 11%, 84%);
+  	--color-grey-blue-dark:hsl(236, 9%, 61%);
+  	--color-grey-blue-dark-2:hsl(233, 11%, 84%);
+  }
+
+	// $color-primary:hsl(220, 98%, 61%);
+	// $color-bg:linear-gradient(to right,hsl(192, 100%, 67%),hsl(280, 87%, 65%));
+
+	// $color-white:#fff;
+	// $color-white-smoke:whitesmoke;
+
+	// $color-white-dark:#e4e4e4;
+	$default-font-size:1.8rem;
+	$default-font-family:"Josefin Sans",sans-serif;
+
+	//LIGHT THEME COLORS
+	// $color-grey-blue-1: hsl(236, 33%, 92%);
+	// $color-grey-light:hsl(0, 0%, 98%);
+
+	// $color-grey-blue:hsl(233, 11%, 84%);
+	// $color-grey-blue-dark:hsl(236, 9%, 61%);
+	// $color-grey-blue-dark-2: hsl(235, 19%, 35%);
+
+
+//DARK THEME COLORS
+/*
+$color-white:hsl(235, 24%, 19%);
+$color-white-smoke:hsl(235, 21%, 11%);
+
+
+
+$color-grey-blue:hsl(234, 39%, 85%);
+$color-grey-blue-dark:hsl(234, 11%, 52%);
+$color-grey-blue-dark-2:hsl(233, 14%, 35%);
+*/
+
+/*
+$color-grey-blue-1:
+$color-grey-light:
+*/
+
+
+
+
+
