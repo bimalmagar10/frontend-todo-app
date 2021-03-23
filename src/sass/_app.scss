@@ -143,6 +143,10 @@
       justify-content: space-between;
       align-items: center;
       color: var(--color-grey-blue);
+      @include responsive(small-phone) {
+        font-size: 1rem;
+        padding: 1.3rem 2rem;
+      }
 	}
   &__state {
     & > * {
@@ -152,6 +156,9 @@
     }
     & > *:not(:last-child) {
       margin-right: 1rem;
+      @include responsive(small-phone) {
+        margin-right: .8rem;
+      }
     }
   }
   &__clear-completed {

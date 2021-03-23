@@ -235,6 +235,12 @@ body {
   align-items: center;
   color: var(--color-grey-blue);
 }
+@media only screen and (max-width: 28.125em) {
+  .todo-app__status {
+    font-size: 1rem;
+    padding: 1.3rem 2rem;
+  }
+}
 .todo-app__state > * {
   cursor: pointer;
   font-weight: 700;
@@ -242,6 +248,11 @@ body {
 }
 .todo-app__state > *:not(:last-child) {
   margin-right: 1rem;
+}
+@media only screen and (max-width: 28.125em) {
+  .todo-app__state > *:not(:last-child) {
+    margin-right: 0.8rem;
+  }
 }
 .todo-app__clear-completed {
   cursor: pointer;
