@@ -262,18 +262,20 @@ const appController = ((dataCtrl,UICtrl)=> {
         if(UICtrl.returnAlert()){
           UICtrl.removeAlert();
         }
-        //add data to the datacontroller
-        newTodos = dataCtrl.createTodo(getTitle.title);
-        //add todos to the ui
-        UICtrl.addLists(newTodos.title,newTodos.id);
+        if(/^\s+$/.test(getTitle.title) === false && getTitle.title !== ""){
+	        //add data to the datacontroller
+	        newTodos = dataCtrl.createTodo(getTitle.title);
+	        //add todos to the ui
+	        UICtrl.addLists(newTodos.title,newTodos.id);
 
-        //clear the input field
-        UICtrl.clearInput();
-        
-        //Stores no.of todos left
-        newCount = dataCtrl.updateCount();
-        //Add items left in the UI
-        UICtrl.updateCounter(newCount);
+	        //clear the input field
+	        UICtrl.clearInput();
+	        
+	        //Stores no.of todos left
+	        newCount = dataCtrl.updateCount();
+	        //Add items left in the UI
+	        UICtrl.updateCounter(newCount);
+        }
 	};
 
 	//Display active todos

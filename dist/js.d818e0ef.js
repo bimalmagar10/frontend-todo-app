@@ -392,18 +392,20 @@ var appController = function (dataCtrl, UICtrl) {
 
     if (UICtrl.returnAlert()) {
       UICtrl.removeAlert();
-    } //add data to the datacontroller
+    }
 
+    if (/^\s+$/.test(getTitle.title) === false && getTitle.title !== "") {
+      //add data to the datacontroller
+      newTodos = dataCtrl.createTodo(getTitle.title); //add todos to the ui
 
-    newTodos = dataCtrl.createTodo(getTitle.title); //add todos to the ui
+      UICtrl.addLists(newTodos.title, newTodos.id); //clear the input field
 
-    UICtrl.addLists(newTodos.title, newTodos.id); //clear the input field
+      UICtrl.clearInput(); //Stores no.of todos left
 
-    UICtrl.clearInput(); //Stores no.of todos left
+      newCount = dataCtrl.updateCount(); //Add items left in the UI
 
-    newCount = dataCtrl.updateCount(); //Add items left in the UI
-
-    UICtrl.updateCounter(newCount);
+      UICtrl.updateCounter(newCount);
+    }
   }; //Display active todos
 
 
@@ -524,7 +526,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56602" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58037" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
